@@ -1,0 +1,61 @@
+/* CSS declarations go here */
+body {
+    background-color: #00B7FF;
+}
+
+.landpage-box{
+
+    width:auto;
+    top: 25%;
+    left: 23%;
+    position: fixed;
+    background-color: lightgoldenrodyellow;
+    border-radius: 2%;
+}
+
+.landpage-box-left{
+    float: left;
+    padding: 10px;
+}
+
+.landpage-box-right{
+    float: right;
+    padding: 10px;
+}
+
+.nav-tabs{
+    margin-top: 5px;
+    background-color: azure;
+}
+
+#graph-container{
+    margin-top: 20px;
+    width: 700px;
+    height: 650px;
+    background-color: azure;
+    float: left;
+}
+
+#analysis-block{
+    margin-top: 20px;
+    width: 400px;
+    height: 600px;
+    background-color: azure;
+    float: right;
+}
+
+#form-analytic{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    background-color:lightgoldenrodyellow;
+}
+
+.page-header{
+    border-radius: 10px;
+    background-color: cornsilk;
+    padding: 8px;
+    padding-left: 40px;
+    font-size: large;
+}

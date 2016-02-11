@@ -1,0 +1,43 @@
+#!/usr/bin/env python3.5
+
+import json
+
+__author__ = 'vishnu'
+
+from datetime import date
+import tornado
+import tornado.httpserver
+import tornado.ioloop
+import tornado.web
+
+import motor
+from handlers.stockrequesthandler import *
+
+# from sklearn import datasets
+# from sklearn.svm import SVC
+
+
+# SERVER PORT
+SERVER_PORT = 8000
+
+# DB INFO
+COLLECTION = "history_data"
+
+
+# Handlers
+class Application(tornado.web.Application):
+    def __init__(self):
+            self.STOCK_DB = motor.motor_tornado.MotorClient().stocks
+
+            handlers = [
+                (r'/stocks', GetAllStocks, dict(database=self.STOCK_DB, collection=COLLECTION)),
+                (r'/stock/', GetStockDataBySym, dict(database=self.STOCK_DB, collection=COLLECTION))
+            ]
+            tornado.web.Application.__init__(self, handlers, debug=True)
+
+if __name__ == "__main__":
+    http_server = tornado.httpserver.HTTPServer(Application())
+    http_server.listen(SERVER_PORT)
+    print("AnalyticalEngine is started....")
+    print("At http://localhost:",SERVER_PORT)	
+    tornado.ioloop.IOLoop.instance().start()

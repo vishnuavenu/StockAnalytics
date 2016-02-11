@@ -1,0 +1,53 @@
+<!--Analytic Page-->
+<template name="analyticPage">
+    <div class="page-header">
+        <h1>Stock Analysis and Prediction</h1>
+        <span class="label label-warning"><a href="{{pathFor route='landing'}}">Back to Beginning</a></span>
+    </div>
+    <div class="inner-content">
+        <div id="graph-container">
+            <!--Total Stock Available: {{stocks}}-->
+        </div>
+
+        <div id="analysis-block">
+            <form role="form" id="form-analytic">
+                <div class="form-group">
+                    <label for="enterusername"> Enter Email Address as the
+                        Username</label>
+                    <input type="email" class="form-control" id="enterusername"
+                           placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="enterpassword">Password</label>
+                    <input type="password" class="form-control"
+                           id="enterpassword" placeholder="Password">
+                </div>
+                <br>
+                <div class="checkbox">
+                    <label> <input type="checkbox"> Keep me signed in </label>
+                </div>
+                <br>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" value="option1" id="radio1">
+                        Male
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="optionsRadios" value="option2" id="radio2">
+                        Female
+                    </label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-default">Login</button>
+                <div class="form-group">
+                    <label for="filebrowse">Browse to find file</label>
+                    <input type="file" id="filebrowse">
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</template>
